@@ -47,7 +47,7 @@ resource "google_compute_instance" "kafka1" {
     name = "kafka1"
   }
 
-  metadata_startup_script = "sudo -i; sudo yum update -y;sudo yum install git -y; sudo git clone https://github.com/Diksha86/kafka-terraform.git; cd kafka-terraform ; sudo chmod 777 *; sudo sh kafka1.sh"
+  metadata_startup_script = "sudo su; sudo yum update -y;sudo yum install git -y; sudo git clone https://github.com/Diksha86/kafka-terraform.git; cd kafka-terraform ; sudo chmod 777 *; sudo sh kafka1.sh"
 }
 resource "google_compute_instance" "kafka2" {
   name         = "${var.instance_name2}"
@@ -78,7 +78,7 @@ resource "google_compute_instance" "kafka2" {
     name = "kafka2"
   }
 
-  metadata_startup_script = "sudo -i; sudo yum update -y;sudo yum install git -y; sudo git clone https://github.com/Diksha86/kafka-terraform.git; cd kafka-terraform ; sudo chmod 777 *; sudo sh kafka1.sh"
+  metadata_startup_script = "sudo su; sudo yum update -y;sudo yum install git -y; sudo git clone https://github.com/Diksha86/kafka-terraform.git; cd kafka-terraform ; sudo chmod 777 *; sudo sh kafka1.sh"
 }
 resource "google_compute_instance" "zookeeper" {
   name         = "${var.instance_name3}"
@@ -109,5 +109,5 @@ resource "google_compute_instance" "zookeeper" {
     name = "zookeeper"
   }
 
-  metadata_startup_script = "sudo -i; sudo yum update -y;sudo yum install git -y; sudo git clone https://github.com/Diksha86/kafka-terraform.git; cd kafka-terraform ; sudo chmod 777 *; sudo sh kafka.sh"
+  metadata_startup_script = "sudo su; sudo yum update -y;sudo yum install git -y; sudo git clone https://github.com/Diksha86/kafka-terraform.git; cd kafka-terraform ; sudo chmod 777 *; sudo sh kafka.sh"
 }
