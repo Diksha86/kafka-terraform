@@ -11,7 +11,7 @@ resource "google_compute_address" "kafkaip" {
 
 
 resource "google_compute_instance" "kafka0" {
-  name         = "${var.instance_name}"
+  name         = "${var.instance_name1}"
   machine_type = "n1-standard-2"
   zone         = "us-east1-b"
 
@@ -42,7 +42,7 @@ resource "google_compute_instance" "kafka0" {
   metadata_startup_script = "sudo yum update -y;sudo yum install git -y; sudo git clone https://github.com/Diksha86/kafka-terraform.git; cd kafka-terraform ; sudo chmod 777 *; sudo sh kafka.sh"
 }
 resource "google_compute_instance" "kafka1" {
-  name         = "${var.instance_name}"
+  name         = "${var.instance_name2}"
   machine_type = "n1-standard-2"
   zone         = "us-east1-b"
 
@@ -73,7 +73,7 @@ resource "google_compute_instance" "kafka1" {
   metadata_startup_script = "sudo yum update -y;sudo yum install git -y; sudo git clone https://github.com/Diksha86/kafka-terraform.git; cd kafka-terraform ; sudo chmod 777 *; sudo sh kafka.sh"
 }
 resource "google_compute_instance" "zookeeper" {
-  name         = "${var.instance_name}"
+  name         = "${var.instance_name3}"
   machine_type = "n1-standard-2"
   zone         = "us-east1-b"
 
