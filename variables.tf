@@ -6,5 +6,7 @@ variable "kafkasub" {}
 variable "instance_name1" {}
 variable "instance_name2" {}
 variable "instance_name3" {}
-variable "kafka_instance_ip_name" {}
+variable "kafka1_instance_ip_name" {}
+variable "kafka2_instance_ip_name" {}
+variable "kafka3_instance_ip_name" {}
 variable "kafka_instance_ip_region" {}
